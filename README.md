@@ -1,10 +1,10 @@
 # Disk Image Generator
 
-A web application for generating simulated space images by adjusting various parameters. This tool allows astronomers and space enthusiasts to create and visualize scattered light disks around exoplanets with customizable parameters.
+A web application for generating simulated space images by adjusting various parameters. This tool allows astronomers and space enthusiasts to create and visualize polarimetric protoplanetary scattered light disks with customizable parameters.
 
 ## Features
 
-- **Interactive Parameter Adjustment**: Modify disk parameters, SPF parameters, PSF choice, and parallactic angles to generate custom space images
+- **Interactive Parameter Adjustment**: Modify disk parameters, SPF parameters, PSF choice, parallactic angles, and noise to generate custom space images
 - **Real-time Image Generation**: Instantly visualize the effects of parameter changes
 - **Parameter Presets**: Save and load parameter configurations for easy reuse
 - **Image Comparison**: View and compare different generated images in a gallery
@@ -16,62 +16,12 @@ A web application for generating simulated space images by adjusting various par
 - **Frontend**: Next.js 15.2.1, React 19, TypeScript
 - **Styling**: Tailwind CSS 3.4.1
 - **UI Components**: Custom components with animations
-- **Image Processing**: Backend Python API with JAX for accelerated computations
-
-## Getting Started
+- **Image Processing**: Backend Django API that calls GRaTeR-JAX code to produce disk images. (JAX is turned off to preserve RAM)
 
 ### Prerequisites
 
 - Node.js 18.0.0 or higher
 - npm, yarn, or pnpm
-
-### Installation
-
-1. Clone the repository:
-```bash
-git clone https://github.com/yourusername/space-image.git
-cd space-image
-```
-
-2. Install dependencies:
-```bash
-npm install
-# or
-yarn install
-# or
-pnpm install
-```
-
-3. Start the development server:
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-```
-
-4. Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
-
-### Backend Setup
-
-The application requires a backend API for image generation. The backend is built with Python and uses JAX for accelerated computations.
-
-1. Navigate to the `image-api` directory:
-```bash
-cd image-api
-```
-
-2. Set up the Python environment:
-```bash
-conda env create -f environment.yml
-conda activate space-image
-```
-
-3. Start the backend server:
-```bash
-python manage.py runserver
-```
 
 ## Usage
 
@@ -88,7 +38,6 @@ python manage.py runserver
 - `/components`: React components used throughout the application
 - `/public`: Static assets including images
 - `/types`: TypeScript type definitions
-- `/image-api`: Backend API for image generation
 
 ## Contributing
 
@@ -107,4 +56,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 - Based on the GRaTeR-JAX framework from the UCSB Exoplanet Polarimetry Lab
-- Uses astronomical data and models for accurate space image generation
+- Uses astronomical data and models for accurate disk image generation
